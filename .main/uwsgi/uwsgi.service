@@ -1,0 +1,15 @@
+[Unit]
+Description=uWSGI service
+After=syslog.target
+
+[Service]
+ExecStart=/django/env/bin/uwsgi -i /srv/djago-diploy-test/.main/uwsgi/config.ini
+
+Restart=always
+KillSignal=SIGQUIT
+Type=notify
+StandardError=syslog
+NotifyAccess=ALLOWED_HOSTS
+
+[Install]
+WantedBy=multi-user.target
