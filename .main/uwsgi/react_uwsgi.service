@@ -1,0 +1,9 @@
+[uwsgi]
+chdir = /srv/react-app/build
+http-timeout = 86400
+
+socket = /tmp/react.sock
+chmod-socket = 666
+chown-socket = ubuntu:ubuntu
+
+enable-threads = true
