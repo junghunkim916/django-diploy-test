@@ -11,5 +11,14 @@ Type=notify
 StandardError=syslog
 NotifyAccess=ALLOWED_HOSTS
 
+[Service]
+
+WorkingDirectory=/django/config/client
+ExecStart=npm run start
+Restart=always
+User=ubuntu
+Group=ubuntu
+Environment=NODE_ENV=production
+
 [Install]
 WantedBy=multi-user.target
