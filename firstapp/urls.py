@@ -1,6 +1,10 @@
-from firstapp import views
+from . import views
 from django.urls import path
 
+app_name = 'firstapp'
+
 urlpatterns = [
-    path('', views.index, name='index')
+    path('signup',views.signup_view, name='signup'),
+    path('list', views.listAPI, name= 'listAPI'),
+    path('detail/<userId>', views.user_detail, name='userdetail')
 ]
