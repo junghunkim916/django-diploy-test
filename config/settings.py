@@ -126,15 +126,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-ROOT_DIR = os.path.dirname(BASE_DIR)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+REACT_BUILD_DIR = os.path.join(BASE_DIR, 'client', 'build')
+
 STATICFILES_DIRS = [
-        # 실제 static 파일은 모두 client 측에서 소유
-        os.path.join(ROOT_DIR, 'client/static')
+        REACT_BUILD_DIR,
     ]
 
-MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+# MEDIA_URL = "/media/"
+# MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
